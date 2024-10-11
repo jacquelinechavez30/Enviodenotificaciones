@@ -30,8 +30,8 @@ app.post('/enviar-notificacion', async (req, res) => {
     });
     res.status(200).send({ message: 'Notificación enviada', respuesta: respuesta.data });
   } catch (error) {
-    console.error('Error enviando la notificación:', error);
-    res.status(500).send({ error: 'Error enviando la notificación' });
+    console.error('Error enviando la notificación:', error.response.data);
+    res.status(500).send({ error: error.response.data });
   }
 });
 
